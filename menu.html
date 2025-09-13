@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | U8 Cafe</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS styles derived from your JSON configuration */
+
+        /* Global Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #FFFFFF;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        /* Header Component Style */
+        .header-blurry {
+            background: rgba(25, 25, 25, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* For Safari browser compatibility */
+        }
+
+        /* Logo Font Style */
+        .logo-font {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Default Button Style */
+        .btn {
+            padding: 12px 24px;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 8px;
+            background: rgba(50, 50, 50, 0.6);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        /* Button Hover Effect */
+        .btn:hover {
+            background-color: rgba(80, 80, 80, 0.8);
+        }
+
+        /* Footer: Text Link Style */
+        .footer-text-link {
+            color: #AAAAAA;
+            margin: 0 20px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-text-link:hover {
+            color: #FFFFFF;
+        }
+
+        /* Footer: Modern Text Button Style */
+        .footer-modern-btn {
+            display: inline-block;
+            color: #FFFFFF;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 12px 30px;
+            margin: 0 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .footer-modern-btn:hover {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+
+        /* --- NEW STYLES FOR MENU PAGE --- */
+
+        /* Holographic Light Effect for Title */
+        .menu-title-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 4rem; /* Replaces the h1's margin */
+        }
+
+        .menu-title-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px; /* Increased size */
+            height: 130px; /* Increased size */
+            background: radial-gradient(ellipse at center, rgba(20, 130, 255, 0.7) 0%, rgba(20, 130, 255, 0) 75%); /* Made color brighter and more opaque */
+            transform: translate(-50%, -50%) perspective(500px) rotateX(60deg) scale(1.5, 0.5);
+            filter: blur(20px); /* Reduced blur for more definition */
+            z-index: 1;
+        }
+
+        .menu-title-container h1 {
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 0 15px rgba(20, 130, 255, 0.5); /* Added a subtle text glow */
+        }
+
+        /* New Image Section with Parallax Background */
+        #image-feature {
+            /* --- IMPORTANT: CHANGE THIS IMAGE PATH --- */
+            background-image: url('images/IMG_02.png'); 
+            
+            min-height: 70vh;
+            background-attachment: scroll; /* Changed from 'fixed' to make it scroll with the page */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* NEW: Animation for elements fading in */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-item {
+            opacity: 0; /* Start hidden */
+            animation-fill-mode: forwards; /* Keep the final state after animation */
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Component -->
+    <header class="header-blurry fixed top-0 w-full p-5 md:px-10 flex justify-between items-center z-50">
+        <!-- Text Logo -->
+        <a href="index.html" class="logo-font text-[26px] font-semibold text-white tracking-wider">U8</a>
+        <!-- Find Us Button -->
+        <a href="#footer" class="btn text-sm font-semibold">Find Us</a>
+    </header>
+
+    <main>
+        <!-- Menu Page Section -->
+        <section id="menu" class="bg-black pt-32 pb-12 px-6 sm:px-10">
+             <div class="max-w-4xl mx-auto">
+                <!-- Title with Holographic Effect -->
+                <div class="menu-title-container">
+                    <h1 class="text-5xl md:text-7xl font-bold text-center fade-in-item">Menu</h1>
+                </div>
+
+                <!-- Coffee & Espresso Category -->
+                <div class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6 border-l-4 border-gray-500 pl-4 fade-in-item">Coffee & Espresso</h2>
+                    <div class="grid md:grid-cols-2 gap-x-8 gap-y-6">
+                        <div class="border-b border-gray-800 py-3 fade-in-item"><div class="flex justify-between items-baseline"><h3 class="text-xl font-semibold">Espresso</h3><p class="text-xl font-bold"></p></div><p class="text-gray-400 mt-1">A concentrated coffee brew with a rich and aromatic flavor.</p></div>
+                        <div class="border-b border-gray-800 py-3 fade-in-item"><div class="flex justify-between items-baseline"><h3 class="text-xl font-semibold">Americano <span class="text-base font-normal text-gray-400">(Iced available)</span></h3><p class="text-xl font-bold"></p></div><p class="text-gray-400 mt-1">Espresso shots topped with hot water to create a light layer of crema.</p></div>
+                        <div class="border-b border-gray-800 py-3 fade-in-item"><div class="flex justify-between items-baseline"><h3 class="text-xl font-semibold">Cappuccino</h3><p class="text-xl font-bold"></p></div><p class="text-gray-400 mt-1">A classic coffee drink with steamed milk foam.</p></div>
+                        <div class="border-b border-gray-800 py-3 fade-in-item"><div class="flex justify-between items-baseline"><h3 class="text-xl font-semibold">Latte <span class="text-base font-normal text-gray-400">(Iced available)</span></h3><p class="text-xl font-bold"></p></div><p class="text-gray-400 mt-1">Made with espresso and steamed milk, creating a creamy texture.</p></div>
+                    </div>
+                </div>        
+                <!-- Pastries & Bites Category -->
+                <div class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6 border-l-4 border-gray-500 pl-4 fade-in-item">Pastries & Bites</h2>
+                    <div class="grid md:grid-cols-2 gap-x-8 gap-y-6">
+                        <div class="border-b border-gray-800 py-3 fade-in-item"><div class="flex justify-between items-baseline"><h3 class="text-xl font-semibold">Croissant</h3><p class="text-xl font-bold"></p></div><p class="text-gray-400 mt-1">A buttery, flaky, and viennoiserie pastry.</p></div>
+                        <div class="border-b border-gray-800 py-3 fade-in-item"><div class="flex justify-between items-baseline"><h3 class="text-xl font-semibold">Almond Croissant</h3><p class="text-xl font-bold"></p></div><p class="text-gray-400 mt-1">Filled and topped with almond cream and sliced almonds.</p></div>
+                        <div class="border-b border-gray-800 py-3 fade-in-item"><div class="flex justify-between items-baseline"><h3 class="text-xl font-semibold">Avocado Toast</h3><p class="text-xl font-bold"></p></div><p class="text-gray-400 mt-1">Toasted sourdough with fresh avocado, chili flakes, and sea salt.</p></div>
+                        <div class="border-b border-gray-800 py-3 fade-in-item"><div class="flex justify-between items-baseline"><h3 class="text-xl font-semibold">Banana Bread</h3><p class="text-xl font-bold"></p></div><p class="text-gray-400 mt-1">Moist and delicious, a perfect pairing with any coffee.</p></div>
+                    </div>
+                </div>
+
+                 <!-- Iced Beverages Category -->
+                 <div class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6 border-l-4 border-gray-500 pl-4 fade-in-item">Iced Beverages</h2>
+                    <div class="grid md:grid-cols-2 gap-x-8 gap-y-6">
+                        <div class="border-b border-gray-800 py-3 fade-in-item"><div class="flex justify-between items-baseline"><h3 class="text-xl font-semibold">Classic Mojito</h3><p class="text-xl font-bold"></p></div><p class="text-gray-400 mt-1">A refreshing mix of mint, lime, and soda water.</p></div>
+                        <div class="border-b border-gray-800 py-3 fade-in-item"><div class="flex justify-between items-baseline"><h3 class="text-xl font-semibold">Strawberry Lemonade</h3><p class="text-xl font-bold"></p></div><p class="text-gray-400 mt-1">Sweet strawberries blended with tangy homemade lemonade.</p></div>
+                        <div class="border-b border-gray-800 py-3 fade-in-item"><div class="flex justify-between items-baseline"><h3 class="text-xl font-semibold">Cold Brew</h3><p class="text-xl font-bold"></p></div><p class="text-gray-400 mt-1">Steeped for 12 hours for a smooth, low-acid coffee experience.</p></div>
+                    </div>
+                </div>
+                
+                <!-- Tea & More Category -->
+                <div class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6 border-l-4 border-gray-500 pl-4 fade-in-item">Tea & More</h2>
+                    <div class="grid md:grid-cols-2 gap-x-8 gap-y-6">
+                        <div class="border-b border-gray-800 py-3 fade-in-item"><div class="flex justify-between items-baseline"><h3 class="text-xl font-semibold">Chai Latte</h3><p class="text-xl font-bold"></p></div><p class="text-gray-400 mt-1">Black tea infused with warming spices, combined with steamed milk.</p></div>
+                        <div class="border-b border-gray-800 py-3 fade-in-item"><div class="flex justify-between items-baseline"><h3 class="text-xl font-semibold">Matcha Latte</h3><p class="text-xl font-bold"></p></div><p class="text-gray-400 mt-1">Finely ground green tea powder with steamed milk.</p></div>
+                        <div class="border-b border-gray-800 py-3 fade-in-item"><div class="flex justify-between items-baseline"><h3 class="text-xl font-semibold">Herbal Tea</h3><p class="text-xl font-bold"></p></div><p class="text-gray-400 mt-1">A selection of chamomile, peppermint, and berry teas.</p></div>
+                    </div>
+                </div>
+                <!-- NEW: Syrups Sub-section -->
+                <div class="mt-8 pt-6 border-t border-gray-800 fade-in-item">
+                    <h4 class="text-lg font-semibold text-gray-300">+Available Syrups</h4>
+                    <p class="text-gray-400 mt-2">
+                        Vanilla, Caramel, Hazelnut, Peppermint, Chocolate, Strawberry, Coconut, Cinnamon, Blueberry, Irish, Passion Fruit
+                    </p>
+                </div>
+            </div>
+
+
+             </div>
+        </section>
+
+        <!-- NEW: Image Feature Section -->
+        <section id="image-feature" class="flex items-center justify-end p-10">
+            <div class="header-blurry p-8 rounded-lg max-w-md w-full">
+                <h2 class="text-3xl font-bold mb-4">The U8 Experience</h2>
+                <p class="text-gray-300">
+                    It's more than just a menu; it's a curated selection of moments waiting to be enjoyed. 
+                    From the first sip of morning espresso to a relaxing evening tea, we're dedicated to perfecting the craft.
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer Component -->
+        <footer id="footer" class="footer-glow bg-black text-center py-20 px-6 sm:px-10">
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-y-6 sm:gap-y-0">
+                <a href="index.html" class="footer-text-link font-medium">Home</a>
+                <a href="#footer" class="footer-modern-btn font-semibold">Find Us</a>
+            </div>
+            <div class="mt-16 text-gray-500 text-sm space-y-2">
+                <p>Faculty Chemistry Shahrood University of Technology - Laboratory Hall</p>
+                <p>&copy; 2025 U8 Cafe. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- NEW: Script to trigger animations on load -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToAnimate = document.querySelectorAll('.fade-in-item');
+            elementsToAnimate.forEach((element, index) => {
+                // Stagger the animation start time for each item
+                setTimeout(() => {
+                    element.style.animation = `fadeInUp 0.6s ease forwards`;
+                }, index * 100); 
+            });
+        });
+    </script>
+
+</body>
+</html>
+
